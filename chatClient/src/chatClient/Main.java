@@ -8,6 +8,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.io.IOException;
+import java.util.Random;
 
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
@@ -35,6 +36,7 @@ public class Main {
 	static String last ="";
 	static int i;
 	static bottone [][] mat= new bottone[4][4];
+	static char[] alfabeto = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'z'};
 	
 	
 	public static void main(String[] args){
@@ -61,20 +63,25 @@ public class Main {
 		
 		JPanel Area = new JPanel();
 		 for(int r=0;r<4;r++)
-         {
-        	 for(int c=0;c<4;c++)
-        	 {
-        		 mat[r][c]=new bottone();
-        		 mat[r][c].setSize(50, 50);
-        		 mat[r][c].setLocation(30+c*52, 50+r*52);
-        		 mat[r][c].setVisible(true);
-        		 mat[r][c].setBackground(Color.white);
-        		 mat[r][c].setBorderPainted(true);
-        		 finestra.add(mat[r][c]);
-        		// mat[r][c].addActionListener(bLis);
-        	 }
-        	 
-         }
+		 {
+			 for(int c=0;c<4;c++)
+			 {
+				 mat[r][c]=new bottone();
+				 mat[r][c].setSize(50, 50);
+				 mat[r][c].setLocation(30+c*52, 50+r*52);
+				 mat[r][c].setVisible(true);
+				 mat[r][c].setBackground(Color.white);
+				 mat[r][c].setBorderPainted(true);
+				 
+				 Random rand = new Random();
+				 char ch = alfabeto[rand.nextInt(20)];
+				 String s = Character.toString(ch);
+				 mat[r][c].setText(s);
+				 finestra.add(mat[r][c]);
+				// mat[r][c].addActionListener(bLis);
+			 }
+			 
+		 }
         
 		/*sbrText = new JScrollPane(chat);   //scrollpane 
 		sbrText.setVisible(true);
