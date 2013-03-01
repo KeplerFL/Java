@@ -2,28 +2,22 @@ package chatClient;
 
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.InetAddress;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.net.UnknownHostException;
 
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
-import javax.swing.ScrollPaneConstants;
-import javax.swing.text.DefaultCaret;
 
 public class Main {
 	public static Client client=null;
@@ -39,6 +33,9 @@ public class Main {
 	static String HOST = "localhost";
 	static String nick = "mattia";
 	static String last ="";
+	static int i;
+	static bottone [][] mat= new bottone[4][4];
+	
 	
 	public static void main(String[] args){
 		finestra = new JFrame();
@@ -61,7 +58,25 @@ public class Main {
 		des.setLocation(15, 20);
 		finestra.add(des);
 		
-		sbrText = new JScrollPane(chat);   //scrollpane 
+		
+		JPanel Area = new JPanel();
+		 for(int r=0;r<4;r++)
+         {
+        	 for(int c=0;c<4;c++)
+        	 {
+        		 mat[r][c]=new bottone();
+        		 mat[r][c].setSize(50, 50);
+        		 mat[r][c].setLocation(30+c*52, 50+r*52);
+        		 mat[r][c].setVisible(true);
+        		 mat[r][c].setBackground(Color.white);
+        		 mat[r][c].setBorderPainted(true);
+        		 finestra.add(mat[r][c]);
+        		// mat[r][c].addActionListener(bLis);
+        	 }
+        	 
+         }
+        
+		/*sbrText = new JScrollPane(chat);   //scrollpane 
 		sbrText.setVisible(true);
 		sbrText.setSize(250, 250);
 		sbrText.setLocation(15, 40);
@@ -78,7 +93,7 @@ public class Main {
 		DefaultCaret caret = (DefaultCaret)chat.getCaret();   //impostazioni di autoscroll
 		caret.setUpdatePolicy(DefaultCaret.ALWAYS_UPDATE);
 		
-		finestra.add(sbrText);
+		finestra.add(sbrText);*/
 			
 		input.setVisible(true);
 		input.setSize(250, 30);
