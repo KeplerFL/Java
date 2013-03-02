@@ -38,7 +38,8 @@ static String nick = "mattia";
 static String last ="";
 static Button [][] mat= new Button[4][4];
 static JPanel Area;
-static String ris = null;
+static String ris = "";
+static boolean press = false;
 
 public static void main(String[] args){
 	finestra = new JFrame();
@@ -86,8 +87,16 @@ public static void main(String[] args){
 				
 				@Override
 				public void actionPerformed(ActionEvent arg0) {
-					System.out.println("stringa:  " + ris);
-					ris=null;
+					if(press == false)
+						press = true;
+					else
+					{
+						press = false;
+						System.out.println("stringa:  " + ris);
+						ris = "";
+						reset();
+					}
+					
 				}
 			});
     		 k++;
@@ -164,6 +173,17 @@ public static void main(String[] args){
 	}
 	catch (IOException e){};
 	
+	}
+
+	public static void reset()
+	{
+		 for(int r=0;r<4;r++)
+	     {
+	    	 for(int c=0;c<4;c++)
+	    	 {
+	    		 mat[r][c].pressed = false;
+	    	 }
+	     }
 	}
 	
 }

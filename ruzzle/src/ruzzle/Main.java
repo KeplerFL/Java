@@ -36,11 +36,11 @@ public class Main {
 		
 		while(true)
 		{
-			
 			try {
+				System.out.println("ciaociao");
 				server.start(port);
 				}
-			catch (IOException e){}
+			catch (IOException e){System.out.println("vaffanculo, non riesco ada avviarmi");}
 		}
 		
 	}

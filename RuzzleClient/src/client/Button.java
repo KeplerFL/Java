@@ -17,12 +17,13 @@ public class Button extends JButton implements MouseMotionListener {
 
 	@Override
 	public void mouseMoved(MouseEvent e2) {
-		if(this.pressed == false)
-			{
-				Main.ris += this.getText();
-				System.out.println("mouse moved!" + this.getText());
-				this.pressed = true;
-			}
+		if(Main.press)
+			if(this.pressed == false)
+				{
+					Main.ris += this.getText();
+					System.out.println("mouse moved!" + this.getText());
+					this.pressed = true;
+				}
 			
 	}
 	

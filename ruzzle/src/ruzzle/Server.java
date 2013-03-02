@@ -12,37 +12,47 @@ public class Server {
 	boolean isConnected = true;
 
 	public void start(int port) throws IOException{
+		System.out.println("cm asdjklfna");
 		clients=new ArrayList();
 		sock client = new sock();
 		serverSocket= new ServerSocket(port);
-		while(true){
-		client.sock= serverSocket.accept();
-		clients.add(client.sock);
-		Thread t=new Thread(new ParallelServer (client));
-		t.start();
+		while(true)
+		{
+			System.out.println("jdskf");
+			client.sock= serverSocket.accept();
+			clients.add(client.sock);
+			Thread t=new Thread(new ParallelServer (client));
+			t.start();
 		}
 	}
 
-	class ParallelServer implements Runnable{
+	class ParallelServer implements Runnable
+	{
 		DataOutputStream os;
 		BufferedReader is;
 		sock client;
-		public ParallelServer(sock client){
+		public ParallelServer(sock cliente){
 			try{
+				client = cliente;
 				is= new BufferedReader(new InputStreamReader(client.sock.getInputStream()));//in entrata
 				os= new DataOutputStream (client.sock.getOutputStream());//in uscita
-			}catch(IOException e){
-				e.printStackTrace();
-			}
+			}catch(IOException e)				{e.printStackTrace();}
 		}
 		
 		@Override
 		public void run() {
 			try
 			{
+				System.out.println("ciao");
 				String strReceived = "aÿ";
 				Dizionario d = new Dizionario();
+				System.out.println("cacca");
 				String s = d.crea();
+				System.out.println("stringa:" + s);
+				System.out.println("is: " + is.toString());
+				System.out.println("os: " + os.toString());
+				System.out.println("sock:" + client.toString());
+				System.out.println("jdskf" + client.sock.toString());
 				broadcastMessage(s,is, os, client.sock);
 				while((strReceived = is.readLine()) != null)
 				{
@@ -74,13 +84,15 @@ public class Server {
 			}
 		}
 	
-	public void broadcastMessage(String recMsg, BufferedReader is, DataOutputStream os, Socket client) throws IOException{
+	public void broadcastMessage(String recMsg, BufferedReader is, DataOutputStream os, Socket client) throws IOException
+	{
 		Iterator all=clients.iterator();
 		System.out.println("stringa: "+ recMsg);
-		for(   ;all.hasNext();     ){
+		for(   ;all.hasNext();     )
+		{
 			Socket cl=(Socket)all.next();
 				new DataOutputStream(cl.getOutputStream()).writeBytes(recMsg + "\n");
-			}
+		}
 	}
 
 }

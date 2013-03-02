@@ -96,7 +96,8 @@ public class Dizionario {
 	{
 		Random rand = new Random();
 		String s = null;
-		try {
+		try 
+		{
 			diz.seek(rand.nextInt((int) l)*19);
 			s = diz.readLine();
 			s = s.trim();
@@ -109,7 +110,7 @@ public class Dizionario {
 			
 			s = s.substring(0, 16);
 			System.out.println(s);
-			} catch (IOException e) {e.printStackTrace();}
+		} catch (IOException e) {e.printStackTrace();}
 			return s;
 	}
 }
