@@ -55,9 +55,10 @@ public class Server {
 							String[] arr = strReceived.split("\\Ø");
 							if(arr[0].equals("controllo"))
 							{
-								if(d.cerca(arr[1]))
+								if(d.cerca(arr[0]))
 								{
 									System.out.println("parola trovata");
+									//client.punteggio += (int) arr[0].length() * 0.8;
 								}	
 								else
 									System.out.println("parola sbagliata");

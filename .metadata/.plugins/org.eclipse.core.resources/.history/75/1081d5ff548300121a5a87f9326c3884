@@ -69,16 +69,7 @@ public void start(String ipServer,int porta) throws IOException{
 					String[] arr = s.split("\\Ø");
 					if(arr[0].equals("griglia"))
 					{
-						char[] ch = arr[1].toCharArray();
-						int q=0;
-						 for(int r=0;r<4;r++)
-					     {
-					    	 for(int c=0;c<4;c++)
-					    	 {
-					    		Main.mat[r][c].setText(Character.toString(ch[q]));
-					    		q++;
-					    	 }
-					     }
+						
 					}
 					if(Main.finestra.isFocused() == false)
 						trillo();

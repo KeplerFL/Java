@@ -93,9 +93,7 @@ public static void main(String[] args){
 					{
 						press = false;
 						System.out.println("stringa:  " + ris);
-						try {
-							Client.sendMessage("controlloÿ" + ris);
-						} catch (IOException e) 			{e.printStackTrace();}
+						Client.sendMessage("" + input.getText());
 						ris = "";
 						reset();
 					}

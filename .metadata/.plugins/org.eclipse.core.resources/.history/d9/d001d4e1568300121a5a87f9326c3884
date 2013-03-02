@@ -58,6 +58,7 @@ public class Server {
 								if(d.cerca(arr[1]))
 								{
 									System.out.println("parola trovata");
+									//client.punteggio += (int) arr[0].length() * 0.8;
 								}	
 								else
 									System.out.println("parola sbagliata");
