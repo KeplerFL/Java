@@ -1,0 +1,9 @@
+package client;
+
+import java.awt.event.MouseMotionListener;
+
+import javax.swing.JButton;
+
+public class Button extends JButton implements MouseMotionListener {
+
+}

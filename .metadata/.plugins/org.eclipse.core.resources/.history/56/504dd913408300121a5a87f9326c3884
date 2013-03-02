@@ -1,0 +1,152 @@
+package client;
+
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
+import java.io.IOException;
+import java.util.Random;
+
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
+public class Main {
+public static Client client=null;
+static JLabel des;
+static JTextField input;
+static JTextArea chat;
+static JButton chiudi;
+static JButton file;
+private static JScrollPane sbrText;
+static JCheckBox pp;
+static JFrame finestra;
+static String ip = "localhost";
+static String HOST = "localhost";
+static String nick = "mattia";
+static String last ="";
+static JButton [][] mat= new JButton[4][4];
+
+public static void main(String[] args){
+	finestra = new JFrame();
+	des = new JLabel("Chat: ");
+	input = new JTextField(/*"Aspetta che il tuo amico risponda!"*/);
+	chat = new JTextArea();
+	chiudi = new JButton("Chiudi");
+	pp = new JCheckBox("Sempre in primo piano");
+	
+	finestra.setVisible(true);
+	finestra.setSize(300, 420);
+	finestra.setLocation(100, 100);
+	finestra.setLayout(null);
+	finestra.setResizable(false); //impedisco che la finestra venga ridimensionata
+	finestra.setTitle("Chat Client Graziani");
+	
+	finestra.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //quando viene chiusa la finestraprincipale il programma deve terminarsi!
+	
+	des.setVisible(true);
+	des.setSize(150, 20);
+	des.setLocation(15, 20);
+	finestra.add(des);
+	
+	 for(int r=0;r<4;r++)
+     {
+    	 for(int c=0;c<4;c++)
+    	 {
+    		 mat[r][c]=new JButton();
+    		 mat[r][c].setSize(50, 50);
+    		 mat[r][c].setLocation(30+c*65, 50+r*65);
+    		 mat[r][c].setVisible(true);
+    		 mat[r][c].setBackground(Color.white);
+    		 mat[r][c].setBorderPainted(true);
+    		 finestra.add(mat[r][c]);
+    		 //Random rand = new Random();
+    		// char ch = alfabeto[rand.nextInt(20)];   		  	
+    		 //String s = Character.toString(ch);
+    		// mat[r][c].setText(s);
+    		 finestra.add(mat[r][c]);
+    		// mat[r][c].addActionListener(bLis);
+    	 }
+    	 
+     }
+	
+	input.setVisible(true);
+	input.setSize(250, 30);
+	input.setLocation(15, 300);
+	finestra.add(input);
+	
+	chiudi.setVisible(true);
+	chiudi.setSize(200, 30);
+	chiudi.setLocation(45, 335);
+	finestra.add(chiudi);
+	
+	pp.setVisible(true);
+	pp.setSize(200, 20);
+	pp.setLocation(115, 20);
+	pp.setToolTipText("Set the chat frame above every other frame.");
+	finestra.add(pp);
+	
+	String h = JOptionPane.showInputDialog(null, "Inserisci l'indirizzo ip del tuo compagno: ", "IP", 1);
+	nick = JOptionPane.showInputDialog(null, "Inserisci il nickname: ", "Nickname", 3);
+	if(h != null)
+	HOST = h;
+	
+	pp.addItemListener(new ItemListener() {
+	
+	@Override
+	public void itemStateChanged(ItemEvent e) {
+		Object source = e.getItemSelectable();
+		
+		if (source == pp) 
+			finestra.setAlwaysOnTop(true);
+		if(e.getStateChange() == ItemEvent.DESELECTED)
+			finestra.setAlwaysOnTop(false);
+		}
+	});
+
+	input.addActionListener(new ActionListener() {
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {
+	
+		chat.setForeground(Color.blue);
+		if(sbrText.isMaximumSizeSet()== true)
+		{
+			System.out.println("arrivato alla fine");
+			sbrText.setPreferredSize(new
+			Dimension(sbrText.getPreferredSize().width, sbrText.getPreferredSize().height+150));
+		}
+		try {
+			last=nick + ":" + input.getText();
+			Client.sendMessage(nick + ":" + input.getText());
+		} catch (IOException e1) {chat.append("ERROR IN SENDING MESSAGE!");}
+			input.setText(null);
+		}
+	});
+	
+	chiudi.addActionListener(new ActionListener() {
+	
+	@Override
+	public void actionPerformed(ActionEvent e) 
+	{
+		System.exit(1);
+	}
+	});
+	
+	client= new Client();
+	try 
+	{
+		client.start(HOST, 7000);
+	}
+	catch (IOException e){};
+	
+	}
+	
+}

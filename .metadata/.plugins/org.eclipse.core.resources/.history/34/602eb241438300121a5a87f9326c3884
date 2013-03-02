@@ -1,0 +1,5 @@
+package client;
+
+public class Button extends JButton implements MouseMotionListener {
+
+}
