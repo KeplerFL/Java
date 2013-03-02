@@ -88,10 +88,14 @@ public static void main(String[] args){
 				@Override
 				public void actionPerformed(ActionEvent arg0) {
 					if(press == false)
+					{
+						Area.setCursor(new Cursor(Cursor.CROSSHAIR_CURSOR));
 						press = true;
+					}
 					else
 					{
 						press = false;
+						Area.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
 						System.out.println("stringa:  " + ris);
 						try {
 							Client.sendMessage("controlloÿ" + ris);
