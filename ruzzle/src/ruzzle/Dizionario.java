@@ -6,6 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.RandomAccessFile;
+import java.util.Random;
 
 public class Dizionario {
 
@@ -88,5 +89,27 @@ public class Dizionario {
 				return false;
 		} catch (IOException e) {e.printStackTrace();}
 		return false;
+	}
+	
+	
+	public String crea() 
+	{
+		Random rand = new Random();
+		String s = null;
+		try {
+			diz.seek(rand.nextInt((int) l)*19);
+			s = diz.readLine();
+			s = s.trim();
+			System.out.println(s);
+			while(s.length()<=16)
+			{
+				diz.seek(rand.nextInt((int) l)*19);
+				s += diz.readLine().trim();
+			}
+			
+			s = s.substring(0, 16);
+			System.out.println(s);
+			} catch (IOException e) {e.printStackTrace();}
+			return s;
 	}
 }

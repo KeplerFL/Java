@@ -41,11 +41,14 @@ public class Server {
 			try
 			{
 				String strReceived = "aÿ";
+				Dizionario d = new Dizionario();
+				String s = d.crea();
+				broadcastMessage(s,is, os, client.sock);
 				while((strReceived = is.readLine()) != null)
 				{
 					System.out.println("sono in: CLASSE PARALLEL_SERVER - Metodo broadcastMessage");
 							String[] arr = strReceived.split("\\ÿ");
-							Dizionario d = new Dizionario();
+							
 							if(d.cerca(arr[0]))
 							{
 								System.out.println("parola trovata");
