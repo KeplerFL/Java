@@ -42,7 +42,8 @@ public class elimina {
 				{
 					while(s.length() < 16)
 					{
-						s.replace("'", " ");
+						s.replace("'", "");
+						s.replace("-", "");
 						s += " ";
 					}
 				}
