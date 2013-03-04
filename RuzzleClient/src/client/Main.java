@@ -24,28 +24,23 @@ import javax.swing.JTextField;
 
 public class Main {
 public static Client client=null;
-static JLabel des;
-static JTextField input;
-static JTextArea chat;
+static JLabel des, punti;
 static JButton chiudi;
-static JButton file;
-private static JScrollPane sbrText;
 static JCheckBox pp;
 static JFrame finestra;
 static String ip = "localhost";
 static String HOST = "localhost";
 static String nick = "mattia";
-static String last ="";
 static Button [][] mat= new Button[4][4];
 static JPanel Area;
 static String ris = "";
 static boolean press = false;
+static int punteggio = 0;
 
 public static void main(String[] args){
 	finestra = new JFrame();
 	des = new JLabel("Chat: ");
-	input = new JTextField(/*"Aspetta che il tuo amico risponda!"*/);
-	chat = new JTextArea();
+	punti = new JLabel("0");
 	chiudi = new JButton("Chiudi");
 	pp = new JCheckBox("Sempre in primo piano");
 	
@@ -62,6 +57,11 @@ public static void main(String[] args){
 	des.setSize(150, 20);
 	des.setLocation(15, 20);
 	finestra.add(des);
+	
+	punti.setVisible(true);
+	punti.setSize(150, 20);
+	punti.setLocation(80, 20);
+	finestra.add(punti);
 	
 	Area = new JPanel();
 	Area.setLocation(new Point(30, 50));
@@ -110,11 +110,6 @@ public static void main(String[] args){
     	 }
      }
 	
-	input.setVisible(true);
-	input.setSize(250, 30);
-	input.setLocation(15, 300);
-	finestra.add(input);
-	
 	chiudi.setVisible(true);
 	chiudi.setSize(200, 30);
 	chiudi.setLocation(45, 335);
@@ -141,26 +136,6 @@ public static void main(String[] args){
 			finestra.setAlwaysOnTop(true);
 		if(e.getStateChange() == ItemEvent.DESELECTED)
 			finestra.setAlwaysOnTop(false);
-		}
-	});
-
-	input.addActionListener(new ActionListener() {
-	
-	@Override
-	public void actionPerformed(ActionEvent e) {
-	
-		chat.setForeground(Color.blue);
-		if(sbrText.isMaximumSizeSet()== true)
-		{
-			System.out.println("arrivato alla fine");
-			sbrText.setPreferredSize(new
-			Dimension(sbrText.getPreferredSize().width, sbrText.getPreferredSize().height+150));
-		}
-		try {
-			last=nick + ":" + input.getText();
-			Client.sendMessage(nick + ":" + input.getText());
-		} catch (IOException e1) {chat.append("ERROR IN SENDING MESSAGE!");}
-			input.setText(null);
 		}
 	});
 	

@@ -80,6 +80,11 @@ public void start(String ipServer,int porta) throws IOException{
 					    	 }
 					     }
 					}
+					else if(arr[0].equals("punti"))
+					{
+						Main.punti.setText(arr[1]);
+						Main.punteggio += Integer.parseInt(arr[1]);
+					}
 					if(Main.finestra.isFocused() == false)
 						trillo();
 				}

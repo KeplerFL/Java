@@ -75,9 +75,7 @@ public class Dizionario {
 				r = si.compareToIgnoreCase(s);
 				if(r == 0)	{break;}
 				else if(r<0) 	{top = middle + 1;}
-				else {last = middle - 1;}				
-				//diz.seek(0);
-				System.out.println("num " + middle);
+				else {last = middle - 1;}			
 			}
 			
 			if(r == 0)

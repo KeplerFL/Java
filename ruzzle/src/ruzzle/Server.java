@@ -58,6 +58,7 @@ public class Server {
 								if(d.cerca(arr[1]))
 								{
 									System.out.println("parola trovata");
+									os.writeBytes("puntiÿ" + arr[1].length()*1.5);
 								}	
 								else
 									System.out.println("parola sbagliata");
