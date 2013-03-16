@@ -15,14 +15,13 @@ import javax.sound.sampled.UnsupportedAudioFileException;
 
 public class Client {
 private static DataOutputStream os;
-private BufferedReader is;
+private static BufferedReader is;
 private int porta;
-private Socket socket = null; // crea un oggetto della classe SocketClient
+private static Socket socket = null; // crea un oggetto della classe SocketClient
 private boolean isClientConnected; // crea una variabile di tipo Boolean per controllare lo stato di
 
 public void start(String ipServer,int porta) throws IOException{
 	//Connessione della socket con il server
-	System.out.println("Tentativo di connessione con server: " + "[" + ipServer + "]" + " su porta: "+ "["+	porta +"]");
 	socket = new Socket (ipServer,porta);
 	
 	//Stream di Byte da passare al Socket
@@ -44,9 +43,9 @@ public void start(String ipServer,int porta) throws IOException{
 		return is.readLine();
 	}
 	
-	public void close ()throws IOException
+	public static void close ()throws IOException
 	{
-		System.out.println("Chiusura client e stream");
+		os.writeBytes("chiusuraï¿½"+Main.id);
 		os.close();
 		is.close();
 		socket.close();
@@ -63,10 +62,8 @@ public void start(String ipServer,int porta) throws IOException{
 				{
 				try 
 				{
-					s=is.readLine();
-					System.out.println("ricevuto = " + s);
-					
-					String[] arr = s.split("\\Ø");
+					s=is.readLine();					
+					String[] arr = s.split("\\ï¿½");
 					if(arr[0].equals("griglia"))
 					{
 						char[] ch = arr[1].toCharArray();
@@ -80,10 +77,19 @@ public void start(String ipServer,int porta) throws IOException{
 					    	 }
 					     }
 					}
-					else if(arr[0].equals("punti"))
+					else if(arr[0].equals("stringa"))
 					{
-						Main.punti.setText(arr[1]);
-						Main.punteggio += Integer.parseInt(arr[1]);
+						if(arr[1].equals("ok"))
+						{
+							Main.punteggio += Main.last.length()*1.5;
+							Main.parola.setText(Main.last);
+							Main.add.setText(Integer.toString((int) (Main.last.length()*1.5)));
+							Main.punti.setText(Integer.toString(Main.punteggio));
+						}
+						else
+						{
+							
+						}
 					}
 					if(Main.finestra.isFocused() == false)
 						trillo();

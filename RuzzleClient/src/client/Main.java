@@ -10,6 +10,8 @@ import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionListener;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 import java.io.IOException;
 
 import javax.swing.JButton;
@@ -24,7 +26,7 @@ import javax.swing.JTextField;
 
 public class Main {
 public static Client client=null;
-static JLabel des, punti;
+static JLabel des, punti, parola, add;
 static JButton chiudi;
 static JCheckBox pp;
 static JFrame finestra;
@@ -33,14 +35,19 @@ static String HOST = "localhost";
 static String nick = "mattia";
 static Button [][] mat= new Button[4][4];
 static JPanel Area;
-static String ris = "";
+static String ris, last = "";
 static boolean press = false;
 static int punteggio = 0;
+static int id;
+
+static int lastx, lasty = 125;
 
 public static void main(String[] args){
 	finestra = new JFrame();
 	des = new JLabel("Chat: ");
 	punti = new JLabel("0");
+	parola = new JLabel("");
+	add = new JLabel("");
 	chiudi = new JButton("Chiudi");
 	pp = new JCheckBox("Sempre in primo piano");
 	
@@ -82,6 +89,8 @@ public static void main(String[] args){
     		 mat[r][c].setBackground(Color.white);
     		 mat[r][c].setBorderPainted(true);
     		 mat[r][c].addMouseMotionListener(mat[r][c]);
+    		 mat[r][c].x = r;
+    		 mat[r][c].y = c;
     		 Area.add(mat[r][c]);
     		 mat[r][c].addActionListener(new ActionListener() {
 				
@@ -97,9 +106,11 @@ public static void main(String[] args){
 						press = false;
 						Area.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
 						System.out.println("stringa:  " + ris);
+						Main.lastx = Main.lasty = 125;
 						try {
-							Client.sendMessage("controlloØ" + ris);
+							Client.sendMessage("controlloï¿½" + ris);
 						} catch (IOException e) 			{e.printStackTrace();}
+						last = ris;
 						ris = "";
 						reset();
 					}
@@ -109,11 +120,17 @@ public static void main(String[] args){
     		 k++;
     	 }
      }
+	 
+	parola.setVisible(true);
+	parola.setSize(150, 20);
+	parola.setLocation(80, 330);
+	finestra.add(parola);
 	
-	chiudi.setVisible(true);
-	chiudi.setSize(200, 30);
-	chiudi.setLocation(45, 335);
-	finestra.add(chiudi);
+	add.setVisible(true);
+	add.setSize(150, 20);
+	add.setLocation(200, 330);
+	finestra.add(add);
+	
 	
 	pp.setVisible(true);
 	pp.setSize(200, 20);
@@ -155,7 +172,58 @@ public static void main(String[] args){
 	}
 	catch (IOException e){};
 	
-	}
+	finestra.addWindowListener(new WindowListener() {
+		
+		@Override
+		public void windowOpened(WindowEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+		
+		@Override
+		public void windowIconified(WindowEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+		
+		@Override
+		public void windowDeiconified(WindowEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+		
+		@Override
+		public void windowDeactivated(WindowEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+		
+		@Override
+		public void windowClosing(WindowEvent e) {
+			try {
+				Client.close();
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			
+		}
+		
+		@Override
+		public void windowClosed(WindowEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+		
+		@Override
+		public void windowActivated(WindowEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+	});
+}
+
+
 
 	public static void reset()
 	{
@@ -168,4 +236,17 @@ public static void main(String[] args){
 	     }
 	}
 	
+	public static boolean IsInRangeM(int curx, int cury)
+	{
+		if(curx < lastx-1 || curx > lastx+1)
+		{
+			return false;
+		}
+		else if(cury < lasty-1 || cury > lasty+1)
+			return false;
+		else 
+		{
+			return true;
+		}
+	}	
 }

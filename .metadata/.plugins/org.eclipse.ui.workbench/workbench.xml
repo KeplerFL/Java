@@ -22,7 +22,7 @@
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="190" y="22"/>
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
-<coolItem id="org.eclipse.jdt.ui.CompilationUnitEditor" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="org.eclipse.jdt.ui.CompilationUnitEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="group.help" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
 </coolbarLayout>
@@ -31,12 +31,58 @@
 <editorArea activeWorkbook="DefaultEditorWorkbook">
 <info part="DefaultEditorWorkbook">
 <folder appearance="1" expanded="2">
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+<part id="2"/>
+<part id="3"/>
+<part id="4"/>
+<part id="5"/>
+<part id="6"/>
+</presentation>
 </folder>
 </info>
 </editorArea>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Button.java" partName="Button.java" path="G:/Java/RuzzleClient/src/client/Button.java" title="Button.java" tooltip="RuzzleClient/src/client/Button.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/RuzzleClient/src/client/Button.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="507" selectionTopPixel="269"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Client.java" partName="Client.java" path="K:/Java/RuzzleClient/src/client/Client.java" title="Client.java" tooltip="RuzzleClient/src/client/Client.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/RuzzleClient/src/client/Client.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1931" selectionTopPixel="870"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Main.java" partName="Main.java" path="K:/Java/RuzzleClient/src/client/Main.java" title="Main.java" tooltip="RuzzleClient/src/client/Main.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/RuzzleClient/src/client/Main.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="3477" selectionTopPixel="1699"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Main.java" partName="Main.java" path="K:/Java/ruzzle/src/ruzzle/Main.java" title="Main.java" tooltip="ruzzle/src/ruzzle/Main.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ruzzle/src/ruzzle/Main.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="172" selectionTopPixel="2"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="sock.java" partName="sock.java" path="K:/Java/ruzzle/src/ruzzle/sock.java" title="sock.java" tooltip="ruzzle/src/ruzzle/sock.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ruzzle/src/ruzzle/sock.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="99" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Dizionario.java" partName="Dizionario.java" path="G:/Java/ruzzle/src/ruzzle/Dizionario.java" title="Dizionario.java" tooltip="ruzzle/src/ruzzle/Dizionario.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ruzzle/src/ruzzle/Dizionario.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1315" selectionTopPixel="750"/>
+</editor>
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Server.java" partName="Server.java" path="K:/Java/ruzzle/src/ruzzle/Server.java" title="Server.java" tooltip="ruzzle/src/ruzzle/Server.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ruzzle/src/ruzzle/Server.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="420"/>
+</editor>
 </editors>
 <views>
+<view id="org.eclipse.debug.ui.DebugView" partName="Debug">
+<viewState/>
+</view>
+<view id="org.eclipse.debug.ui.BreakpointView" partName="Breakpoints">
+<viewState/>
+</view>
+<view id="org.eclipse.debug.ui.VariableView" partName="Variables">
+<viewState/>
+</view>
+<view id="org.eclipse.ui.views.TaskList" partName="Tasks"/>
 <view id="org.eclipse.ui.views.ContentOutline" partName="Outline">
 <viewState/>
 </view>
@@ -127,7 +173,7 @@
 <view id="org.eclipse.wst.server.ui.ServersView" partName="Servers"/>
 <view id="org.eclipse.jdt.ui.JavadocView" partName="Javadoc"/>
 </views>
-<perspectives activePart="org.eclipse.jdt.ui.PackageExplorer" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
+<perspectives activePart="org.eclipse.jdt.ui.CompilationUnitEditor" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="org.eclipse.jst.j2ee.internal.perspective.J2EEPerspective" id="org.eclipse.jst.j2ee.J2EEPerspective" label="Java EE"/>
 <alwaysOnActionSet id="org.eclipse.mylyn.context.ui.actionSet"/>
@@ -329,7 +375,7 @@
 </folder>
 </info>
 <info part="org.eclipse.ui.editorss" ratio="0.13715886" ratioLeft="196" ratioRight="1233" relationship="2" relative="left"/>
-<info folder="true" part="bottom" ratio="0.75" ratioLeft="573" ratioRight="191" relationship="4" relative="org.eclipse.ui.editorss">
+<info folder="true" part="bottom" ratio="0.75821596" ratioLeft="646" ratioRight="206" relationship="4" relative="org.eclipse.ui.editorss">
 <folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
 <page content="org.eclipse.jdt.ui.JavadocView" label="Javadoc"/>
@@ -367,9 +413,266 @@
 </mainWindow>
 </layout>
 </perspective>
+<perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
+<descriptor class="org.eclipse.debug.internal.ui.DebugPerspectiveFactory" id="org.eclipse.debug.ui.DebugPerspective" label="Debug"/>
+<alwaysOnActionSet id="org.eclipse.mylyn.context.ui.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.mylyn.doc.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.mylyn.tasks.ui.navigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.rse.core.search.searchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.search.searchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.annotationNavigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.navigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.convertLineDelimitersTo"/>
+<alwaysOnActionSet id="org.eclipse.ui.externaltools.ExternalToolsSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.keyBindings"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.openFiles"/>
+<alwaysOnActionSet id="org.eclipse.wb.core.ui.actionset"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.launchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.NavigateActionSet"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.breakpointActionSet"/>
+<alwaysOnActionSet id="org.eclipse.jdt.debug.ui.JDTDebugActionSet"/>
+<alwaysOnActionSet id="org.eclipse.jdt.ui.JavaActionSet"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.debugActionSet"/>
+<show_view_action id="org.eclipse.debug.ui.DebugView"/>
+<show_view_action id="org.eclipse.debug.ui.VariableView"/>
+<show_view_action id="org.eclipse.debug.ui.BreakpointView"/>
+<show_view_action id="org.eclipse.debug.ui.ExpressionView"/>
+<show_view_action id="org.eclipse.ui.views.ContentOutline"/>
+<show_view_action id="org.eclipse.ui.console.ConsoleView"/>
+<show_view_action id="org.eclipse.ui.views.TaskList"/>
+<show_view_action id="org.eclipse.ant.ui.views.AntView"/>
+<show_view_action id="org.eclipse.datatools.sqltools.result.resultView"/>
+<show_view_action id="org.eclipse.pde.runtime.LogView"/>
+<show_view_action id="org.eclipse.jdt.debug.ui.DisplayView"/>
+<perspective_action id="org.eclipse.datatools.sqltools.sqleditor.perspectives.EditorPerspective"/>
+<perspective_action id="org.eclipse.jdt.ui.JavaPerspective"/>
+<perspective_action id="org.eclipse.jdt.ui.JavaBrowsingPerspective"/>
+<perspective_action id="org.eclipse.wst.jsdt.ui.JavaPerspective"/>
+<perspective_action id="org.eclipse.wst.xml.ui.perspective"/>
+<hide_toolbar_item_id id="org.eclipse.jdt.ui.actions.OpenProjectWizard"/>
+<hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
+<view id="org.eclipse.ui.console.ConsoleView"/>
+<view id="org.eclipse.ui.views.TaskList"/>
+<view id="org.eclipse.debug.ui.DebugView"/>
+<view id="org.eclipse.wst.server.ui.ServersView"/>
+<view id="org.eclipse.debug.ui.VariableView"/>
+<view id="org.eclipse.debug.ui.BreakpointView"/>
+<view id="org.eclipse.ui.views.ContentOutline"/>
+<fastViewBars/>
+<layout>&#x0A;<mainWindow>&#x0A;<info folder="true" part="org.eclipse.debug.internal.ui.NavigatorFolderView">&#x0A;<folder activePageID="org.eclipse.debug.ui.DebugView" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.debug.ui.DebugView" label="Debug"/>
+<page content="org.eclipse.wst.server.ui.ServersView" label="Servers"/>
+<page content="org.eclipse.ui.views.ResourceNavigator" label="LabelNotFound"/>
+<page content="org.eclipse.jdt.ui.PackageExplorer" label="LabelNotFound"/>
+<page content="org.eclipse.jdt.ui.TypeHierarchy" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
+<part id="1"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="stickyFolderRight" ratio="0.75" ratioLeft="954" ratioRight="318" relationship="2" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">&#x0A;<folder appearance="2" expanded="2">&#x0A;<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
+<page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
+</folder>
+</info>
+<info folder="true" part="org.eclipse.debug.internal.ui.ConsoleFolderView" ratio="0.7497076" ratioLeft="641" ratioRight="214" relationship="4" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">&#x0A;<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
+<page content="org.eclipse.ui.views.TaskList" label="Tasks"/>
+<page content="org.eclipse.ui.views.BookmarkView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.views.PropertySheet" label="LabelNotFound"/>
+<page content="org.eclipse.datatools.sqltools.result.resultView" label="LabelNotFound"/>
+<page content="org.eclipse.jdt.debug.ui.DisplayView" label="LabelNotFound"/>
+<page content="org.eclipse.search.SearchResultView" label="LabelNotFound"/>
+<page content="org.eclipse.wst.xsl.jaxp.debug.ui.view1" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
+<part id="1"/>
+</presentation>
+</folder>
+</info>
+<info part="org.eclipse.ui.editorss" ratio="0.44929796" ratioLeft="288" ratioRight="353" relationship="4" relative="org.eclipse.debug.internal.ui.NavigatorFolderView"/>
+<info folder="true" part="org.eclipse.debug.internal.ui.OutlineFolderView" ratio="0.75" ratioLeft="954" ratioRight="318" relationship="2" relative="org.eclipse.ui.editorss">&#x0A;<folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
+<page content="org.eclipse.ant.ui.views.AntView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="org.eclipse.debug.internal.ui.ToolsFolderView" ratio="0.5" ratioLeft="636" ratioRight="636" relationship="2" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">&#x0A;<folder activePageID="org.eclipse.debug.ui.VariableView" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.debug.ui.VariableView" label="Variables"/>
+<page content="org.eclipse.debug.ui.BreakpointView" label="Breakpoints"/>
+<page content="org.eclipse.debug.ui.ExpressionView" label="LabelNotFound"/>
+<page content="org.eclipse.debug.ui.RegisterView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
+<part id="1"/>
+</presentation>
+</folder>
+</info>
+</mainWindow>
+</layout>
+</perspective>
 </perspectives>
 <workingSets/>
-<navigationHistory/>
+<navigationHistory>
+<editors>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/RuzzleClient/src/client/Client.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/RuzzleClient/src/client/Main.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ruzzle/src/ruzzle/Server.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ruzzle/src/ruzzle/sock.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ruzzle/src/ruzzle/Dizionario.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ruzzle/src/ruzzle/Main.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/RuzzleClient/src/client/Client.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ruzzle/src/ruzzle/sock.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ruzzle/src/ruzzle/Main.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ruzzle/src/ruzzle/Server.java"/>
+</editors>
+<item historyLabel="sock.java" index="3">
+<position info="not_deleted" x="99" y="0"/>
+</item>
+<item historyLabel="Server.java" index="2">
+<position info="not_deleted" x="2725" y="0"/>
+</item>
+<item historyLabel="Server.java" index="2">
+<position/>
+</item>
+<item historyLabel="Server.java" index="2">
+<position info="not_deleted" x="2328" y="0"/>
+</item>
+<item historyLabel="sock.java" index="3">
+<position info="not_deleted" x="99" y="0"/>
+</item>
+<item historyLabel="Server.java" index="2">
+<position info="not_deleted" x="2328" y="0"/>
+</item>
+<item historyLabel="Server.java" index="2">
+<position info="not_deleted" x="1660" y="0"/>
+</item>
+<item historyLabel="Client.java" index="0">
+<position info="not_deleted" x="1398" y="0"/>
+</item>
+<item historyLabel="Server.java" index="2">
+<position info="not_deleted" x="1660" y="0"/>
+</item>
+<item historyLabel="Client.java" index="0">
+<position info="not_deleted" x="2239" y="0"/>
+</item>
+<item historyLabel="Server.java" index="2">
+<position info="not_deleted" x="1660" y="0"/>
+</item>
+<item historyLabel="Server.java" index="2">
+<position info="not_deleted" x="3244" y="0"/>
+</item>
+<item historyLabel="Server.java" index="2">
+<position info="not_deleted" x="2291" y="0"/>
+</item>
+<item historyLabel="Client.java" index="0">
+<position info="not_deleted" x="2239" y="0"/>
+</item>
+<item historyLabel="Dizionario.java" index="4">
+<position info="not_deleted" x="1315" y="0"/>
+</item>
+<item historyLabel="Client.java" index="0">
+<position info="not_deleted" x="2239" y="0"/>
+</item>
+<item historyLabel="Server.java" index="2">
+<position info="not_deleted" x="2291" y="0"/>
+</item>
+<item historyLabel="Client.java" index="0">
+<position info="not_deleted" x="2239" y="0"/>
+</item>
+<item historyLabel="Server.java" index="2">
+<position/>
+</item>
+<item historyLabel="Client.java" index="0">
+<position info="not_deleted" x="2554" y="0"/>
+</item>
+<item historyLabel="Server.java" index="2">
+<position info="not_deleted" x="1877" y="0"/>
+</item>
+<item historyLabel="Server.java" index="2">
+<position info="not_deleted" x="1977" y="0"/>
+</item>
+<item historyLabel="Client.java" index="0">
+<position info="not_deleted" x="2554" y="0"/>
+</item>
+<item historyLabel="Client.java" index="0">
+<position info="not_deleted" x="2418" y="0"/>
+</item>
+<item historyLabel="Client.java" index="0">
+<position info="not_deleted" x="2554" y="0"/>
+</item>
+<item historyLabel="Server.java" index="2">
+<position info="not_deleted" x="1513" y="0"/>
+</item>
+<item historyLabel="Client.java" index="0">
+<position info="not_deleted" x="2554" y="0"/>
+</item>
+<item historyLabel="Server.java" index="2">
+<position info="not_deleted" x="2389" y="0"/>
+</item>
+<item historyLabel="Client.java" index="0">
+<position info="not_deleted" x="2554" y="0"/>
+</item>
+<item historyLabel="Server.java" index="2">
+<position info="not_deleted" x="2389" y="0"/>
+</item>
+<item historyLabel="Client.java" index="0">
+<position info="not_deleted" x="2554" y="0"/>
+</item>
+<item historyLabel="Server.java" index="2">
+<position info="not_deleted" x="1480" y="0"/>
+</item>
+<item historyLabel="Client.java" index="0">
+<position info="not_deleted" x="2554" y="0"/>
+</item>
+<item historyLabel="sock.java" index="3">
+<position info="not_deleted" x="99" y="0"/>
+</item>
+<item historyLabel="Server.java" index="2">
+<position info="not_deleted" x="923" y="0"/>
+</item>
+<item historyLabel="Client.java" index="0">
+<position info="not_deleted" x="2391" y="0"/>
+</item>
+<item historyLabel="Main.java" index="5">
+<position info="not_deleted" x="283" y="0"/>
+</item>
+<item historyLabel="Client.java" index="0">
+<position info="not_deleted" x="2391" y="0"/>
+</item>
+<item historyLabel="Main.java" index="1">
+<position info="not_deleted" x="3298" y="0"/>
+</item>
+<item historyLabel="Client.java" index="0">
+<position info="not_deleted" x="1931" y="0"/>
+</item>
+<item historyLabel="Server.java" index="2">
+<position info="not_deleted" x="923" y="0"/>
+</item>
+<item historyLabel="Client.java" index="0">
+<position info="not_deleted" x="1931" y="0"/>
+</item>
+<item historyLabel="Server.java" index="2">
+<position info="not_deleted" x="841" y="0"/>
+</item>
+<item historyLabel="Main.java" index="1">
+<position info="not_deleted" x="3298" y="0"/>
+</item>
+<item historyLabel="Client.java" index="6">
+<position info="not_deleted" x="1931" y="0"/>
+</item>
+<item historyLabel="sock.java" index="7">
+<position info="not_deleted" x="99" y="0"/>
+</item>
+<item historyLabel="Main.java" index="1">
+<position info="not_deleted" x="3339" y="0"/>
+</item>
+<item historyLabel="Main.java" index="8">
+<position info="not_deleted" x="172" y="0"/>
+</item>
+<item historyLabel="Main.java" index="1">
+<position info="not_deleted" x="3477" y="0"/>
+</item>
+<item active="true" historyLabel="Server.java" index="9">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+</navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
 </page>
 <workbenchWindowAdvisor/>
@@ -392,6 +695,24 @@
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Dizionario.java" tooltip="ruzzle/src/ruzzle/Dizionario.java">
 <persistable path="/ruzzle/src/ruzzle/Dizionario.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="sock.java" tooltip="ruzzle/src/ruzzle/sock.java">
+<persistable path="/ruzzle/src/ruzzle/sock.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Main.java" tooltip="ruzzle/src/ruzzle/Main.java">
+<persistable path="/ruzzle/src/ruzzle/Main.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Main.java" tooltip="RuzzleClient/src/client/Main.java">
+<persistable path="/RuzzleClient/src/client/Main.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Client.java" tooltip="RuzzleClient/src/client/Client.java">
+<persistable path="/RuzzleClient/src/client/Client.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Button.java" tooltip="RuzzleClient/src/client/Button.java">
+<persistable path="/RuzzleClient/src/client/Button.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="elimina.java" tooltip="elimina/src/elimina/elimina.java">
+<persistable path="/elimina/src/elimina/elimina.java"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="controllo.java" tooltip="chatClient/src/chatClient/controllo.java">
 <persistable path="/chatClient/src/chatClient/controllo.java"/>

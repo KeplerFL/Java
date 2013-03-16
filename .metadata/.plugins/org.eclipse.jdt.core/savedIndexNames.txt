@@ -1,20 +1,7 @@
-INDEX VERSION 1.126+K:\Java\.metadata\.plugins\org.eclipse.jdt.core
-1820024274.index
-447760425.index
-3626931047.index
-1752684614.index
-3521617142.index
-683184654.index
-1144188029.index
-4149142647.index
-4018706093.index
-2706502329.index
-2708239607.index
-2813690826.index
-739078005.index
-3256372620.index
-384216248.index
-3015671029.index
-1075156909.index
-4267283917.index
-728132027.index
+INDEX VERSION 1.126+/media/MATTIA/Java/.metadata/.plugins/org.eclipse.jdt.core
+946855514.index
+2576982335.index
+1867106316.index
+2889915287.index
+1393721363.index
+2050312572.index

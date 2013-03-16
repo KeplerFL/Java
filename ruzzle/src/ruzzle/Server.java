@@ -3,24 +3,34 @@ package ruzzle;
 //import dei packages necessari
 import java.net.*;
 import java.util.*;
-import java.awt.Color;
 import java.io.*;
 
 public class Server {
 	private ServerSocket serverSocket;
+	@SuppressWarnings("rawtypes")
 	ArrayList clients;
+	int cont;
 	boolean isConnected = true;
+	boolean isempty = true;
 
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public void start(int port) throws IOException{
-		System.out.println("cm asdjklfna");
 		clients=new ArrayList();
 		sock client = new sock();
 		serverSocket= new ServerSocket(port);
 		while(true)
 		{
-			System.out.println("jdskf");
-			client.sock= serverSocket.accept();
-			clients.add(client.sock);
+			client.sock = serverSocket.accept();
+			if(isempty)
+			{
+				isempty = false;
+				Timer timer = new Timer("Printer");
+				MyTask t = new MyTask();
+				timer.schedule(t, 0, 2*60*1000);
+			}
+			clients.add(client);
+			client.id = cont;
+			cont ++;
 			Thread t=new Thread(new ParallelServer (client));
 			t.start();
 		}
@@ -31,6 +41,8 @@ public class Server {
 		DataOutputStream os;
 		BufferedReader is;
 		sock client;
+		int punteggio = 0;
+		
 		public ParallelServer(sock cliente){
 			try{
 				client = cliente;
@@ -43,54 +55,78 @@ public class Server {
 		public void run() {
 			try
 			{
-				System.out.println("ciao");
-				String strReceived = "aØ";
+				String strReceived = "aï¿½";
 				Dizionario d = new Dizionario();
-				System.out.println("cacca");
-				String s = d.crea();
-				broadcastMessage("grigliaØ"+s,is, os, client.sock);
+				sendMessage("idï¿½"+client.id, client.sock);
 				while((strReceived = is.readLine()) != null)
 				{
-					System.out.println("sono in: CLASSE PARALLEL_SERVER - Metodo broadcastMessage");
-							String[] arr = strReceived.split("\\Ø");
+							String[] arr = strReceived.split("\\ï¿½");
 							if(arr[0].equals("controllo"))
 							{
 								if(d.cerca(arr[1]))
 								{
-									System.out.println("parola trovata");
-									os.writeBytes("puntiØ" + arr[1].length()*1.5);
+									sendMessage("stringaï¿½ok", client.sock);
 								}	
 								else
-									System.out.println("parola sbagliata");
+								{
+									sendMessage("stringaï¿½errore", client.sock);
+								}
+									
 							}
-							
-							for(int i = 0; i<arr.length; i++)
-								System.out.println(arr[i] + "\n");
-						
+							else if(arr[0].equals("chiusura"))
+							{
+								@SuppressWarnings("rawtypes")
+								Iterator all=clients.iterator();
+								for(   ;all.hasNext();     )
+								{
+									sock cl = (sock) all.next();
+									if(cl.id == Integer.parseInt(arr[1]))
+									{
+										all.remove();
+									}
+								}
+							}
 				}
 			} catch (Exception e) 
 			{
 				e.printStackTrace();
-				try {
-					is.close();
-				} catch (IOException e1) {
-					
-					e1.printStackTrace();
-				}
 			}
 				
 			}
 		}
 	
-	public void broadcastMessage(String recMsg, BufferedReader is, DataOutputStream os, Socket client) throws IOException
+	public void broadcastMessage(String recMsg) throws IOException
 	{
+		@SuppressWarnings("rawtypes")
 		Iterator all=clients.iterator();
 		System.out.println("stringa: "+ recMsg);
 		for(   ;all.hasNext();     )
 		{
-			Socket cl=(Socket)all.next();
-				new DataOutputStream(cl.getOutputStream()).writeBytes(recMsg + "\n");
+			sock cl=(sock)all.next();
+				new DataOutputStream(cl.sock.getOutputStream()).writeBytes(recMsg + "\n");
 		}
+	}
+	
+	public void sendMessage(String s, Socket cl)
+	{
+		try 
+		{
+			new DataOutputStream(cl.getOutputStream()).writeBytes(s + "\n");
+		} 
+		catch (IOException e) 								{e.printStackTrace();}
+	}
+	
+	class MyTask extends TimerTask {
+	 
+	    public void run()
+	    {
+			Dizionario d = new Dizionario();
+			String s = d.crea();
+			try {
+				broadcastMessage("grigliaï¿½" + s);
+			} catch (IOException e)							{e.printStackTrace();}
+			d.DDizionario();
+	    }
 	}
 
 }
