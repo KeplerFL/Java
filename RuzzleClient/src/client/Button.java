@@ -1,29 +1,34 @@
 package client;
 
+import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseMotionListener;
+import java.awt.event.MouseListener;
 
+import javax.swing.BorderFactory;
 import javax.swing.JButton;
 
-public class Button extends JButton implements MouseMotionListener {
+public class Button extends JButton implements MouseListener {
 
-	boolean pressed = false;
-	int x;
-	int y;
+	private static final long serialVersionUID = 1L;
 	
+	public boolean premuto = false;
 	@Override
-	public void mouseDragged(MouseEvent e) {}
+	public void mouseClicked(MouseEvent arg0) {}
 
 	@Override
-	public void mouseMoved(MouseEvent e2) {
-		if(Main.press)
-			if(this.pressed == false)
-				{
-				//if(Main.IsInRangeM(x, x))
-				int cx = e2.getComponent().getX();
-				int cy = e2.getComponent().getY();
-				
+	public void mouseEntered(MouseEvent e) 
+	{
+		
+		if(Main.pressed)
+		{
+			this.setBorder(BorderFactory.createMatteBorder(
+	                2, 2, 2, 2, Color.red));
+			if(!this.premuto)
+			{
+				int cx = e.getComponent().getX();
+				int cy = e.getComponent().getY();
+
 				cx = cx / 65;
 				cy = cy / 65;
 				if(Main.lastx == 125)
@@ -31,25 +36,54 @@ public class Button extends JButton implements MouseMotionListener {
 				if(Main.lasty == 125)
 					Main.lasty = cy;
 				if(Main.IsInRangeM(cx, cy))
-					{
+				{
 					Main.lastx = cx;
 					Main.lasty = cy;
-					Main.ris += this.getText();
-					System.out.println("mouse moved!" + this.getText());
-					this.pressed = true;
-					}
+					Main.sfinale += this.getText();
+					premuto = true;
+					Main.l.setText(Main.sfinale.substring(4));
+				}
 				else
 				{
-					Main.press = false;
-					Main.ris = "";
-					Main.Area.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+					Main.pressed = false;
+					Main.sfinale = null;
+					Main.f.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
 					Main.lastx = cx;
 					Main.lasty = cy;
+					Main.reset();
 				}
-						
-				}
-			
+			}
+		}
+	}
+
+	@Override
+	public void mouseExited(MouseEvent arg0) {}
+
+	@Override
+	public void mousePressed(MouseEvent ev) 
+	{ 
+		Main.pressed = true; 
+		Main.sfinale += this.getText(); 
+		this.setBorder(BorderFactory.createMatteBorder(2, 2, 2, 2, Color.red));
+		Main.f.setCursor(new Cursor(Cursor.CROSSHAIR_CURSOR));
+		
+		int cx = ev.getComponent().getX();
+		int cy = ev.getComponent().getY();
+		cx = cx / 65;
+		cy = cy / 65;
+		Main.lastx = cx;
+		Main.lasty = cy;
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent e) 
+	{
+		Main.pressed = false; 
+		Main.reset(); 
+		Main.send();
+		Main.f.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
 	}
 	
-
+	public void premuto(){premuto=false;}
+	public void pres(){premuto=true;}
 }
