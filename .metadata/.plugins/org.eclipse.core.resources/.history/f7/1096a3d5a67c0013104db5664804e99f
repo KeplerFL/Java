@@ -1,0 +1,65 @@
+package text;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class FileManager {
+	
+	private String path;
+	
+	public FileManager(String path)
+	{
+		this.path = path;
+	}
+	
+	public boolean WriteFile(String content)
+	{
+		try {
+ 
+			File file = new File(this.path);
+ 
+			// if file doesnt exists, then create it
+			if (!file.exists()) {
+				file.createNewFile();
+			}
+ 
+			FileWriter fw = new FileWriter(file.getAbsoluteFile());
+			BufferedWriter bw = new BufferedWriter(fw);
+			bw.write(content);
+			bw.close();
+ 
+			return true;
+ 
+		} catch (IOException e) {
+			e.printStackTrace();
+			return false;
+		}
+	}
+	
+	public StringBuffer ReadFile()
+	{
+		BufferedReader bufferedReader;
+		try {
+			bufferedReader = new BufferedReader(new FileReader("readme.txt"));
+		
+		 
+		  StringBuffer stringBuffer = new StringBuffer();
+		  String line = null;
+		 
+		  while((line =bufferedReader.readLine())!=null){
+		 
+		   stringBuffer.append(line).append("\n");
+		  }
+		   
+		  return stringBuffer;
+		} 
+		catch (FileNotFoundException e)	{} 
+		catch (IOException e)			{}
+		return null;
+	}
+}

@@ -1,7 +1,19 @@
-INDEX VERSION 1.126+/media/MATTIA/Java/.metadata/.plugins/org.eclipse.jdt.core
-946855514.index
-2576982335.index
-1867106316.index
-2889915287.index
-1393721363.index
-2050312572.index
+INDEX VERSION 1.126+F:\Android\workspace\.metadata\.plugins\org.eclipse.jdt.core
+3065916431.index
+3133528496.index
+4108727661.index
+1299022128.index
+1498219845.index
+1995173708.index
+163172794.index
+1697886153.index
+30765161.index
+1115467115.index
+4155206848.index
+1752684614.index
+2720348132.index
+447760425.index
+305854171.index
+4041092966.index
+3974580528.index
+4116580837.index

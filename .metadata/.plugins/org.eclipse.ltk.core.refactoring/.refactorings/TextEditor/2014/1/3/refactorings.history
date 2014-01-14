@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;text.File&apos; to &apos;FileManager&apos;&#x0D;&#x0A;- Original project: &apos;TextEditor&apos;&#x0D;&#x0A;- Original element: &apos;text.File&apos;&#x0D;&#x0A;- Renamed element: &apos;text.FileManager&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;File&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;text{File.java[File" matchStrategy="1" name="FileManager" qualified="false" references="true" similarDeclarations="false" stamp="1389653498896" textual="false" version="1.0"/>
+</session>
